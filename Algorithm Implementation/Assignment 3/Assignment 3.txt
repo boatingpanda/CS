@@ -1,0 +1,127 @@
+We have seen that Dijkstra's Shortest Path Algorithm does not work for graphs
+with negative edge-weights but Bellman-Ford does provide a solution provided
+the graph does not possess a negative-weight cycle. So executing the author's
+code on a data file containing a directed graph produces the shortest paths from the specified
+vertex (in the case below, vertex 0) as follows:
+
+bash-3.2$ java BellmanFordSP lecturegraph.txt 0
+0 to 0 ( 0.00) 
+0 to 1 (-2.00)  0->1 -2.00  
+0 to 2 (-3.00)  0->1 -2.00   1->2 -1.00  
+0 to 3 (-1.00)  0->1 -2.00   1->2 -1.00   2->3  2.00  
+0 to 4 (-6.00)  0->1 -2.00   1->2 -1.00   2->4 -3.00  
+0 to 5           no path 
+
+I'd like to propose an alternate way to find the shortest paths in a directed graph
+with negative-edge weights but no negative-weight cycle. Your assignment is to
+implement this process. The TAs will discuss the process in recitation but I'm providing this slideshow for your convenience.
+
+You will create four programs CreateAuxiliaryGraph, ApplyBellmanFord, ApplyDijkstra,
+and ApplyDijkstraAllPairs that can be executed as a series of programs each providing
+its output as input to the next program in the execution sequence. For example, this
+sequence of executions produces the same results obtained by Bellman-Ford.
+
+bash-3.2$ cat lecturegraph.txt | java CreateAuxiliaryGraph | java ApplyBellmanFord 6 | java ApplyDijkstra 0
+0 to 0 ( 0.00) 
+0 to 1 (-2.00)  0->1 -2.00  
+0 to 2 (-3.00)  0->1 -2.00   1->2 -1.00  
+0 to 3 (-1.00)  0->1 -2.00   1->2 -1.00   2->3  2.00  
+0 to 4 (-6.00)  0->1 -2.00   1->2 -1.00   2->4 -3.00  
+0 to 5          no path
+
+Similarly, this sequence of executions finds the all pairs shortest paths in the graph.
+
+bash-3.2$ cat lecturegraph.txt | java CreateAuxiliaryGraph | java ApplyBellmanFord 6 | java ApplyDijkstraAllPairs
+0 to 0 ( 0.00) 
+0 to 1 (-2.00)  0->1 -2.00  
+0 to 2 (-3.00)  0->1 -2.00   1->2 -1.00  
+0 to 3 (-1.00)  0->1 -2.00   1->2 -1.00   2->3  2.00  
+0 to 4 (-6.00)  0->1 -2.00   1->2 -1.00   2->4 -3.00  
+0 to 5          no path
+
+1 to 0 ( 3.00)  1->2 -1.00   2->0  4.00  
+1 to 1 ( 0.00) 
+1 to 2 (-1.00)  1->2 -1.00  
+1 to 3 ( 1.00)  1->2 -1.00   2->3  2.00  
+1 to 4 (-4.00)  1->2 -1.00   2->4 -3.00  
+1 to 5          no path
+
+2 to 0 ( 4.00)  2->0  4.00  
+2 to 1 ( 2.00)  2->0  4.00   0->1 -2.00  
+2 to 2 ( 0.00) 
+2 to 3 ( 2.00)  2->3  2.00  
+2 to 4 (-3.00)  2->4 -3.00  
+2 to 5          no path
+
+3 to 0          no path
+3 to 1          no path
+3 to 2          no path
+3 to 3 ( 0.00) 
+3 to 4          no path
+3 to 5          no path
+
+4 to 0          no path
+4 to 1          no path
+4 to 2          no path
+4 to 3          no path
+4 to 4 ( 0.00) 
+4 to 5          no path
+
+5 to 0          no path
+5 to 1          no path
+5 to 2          no path
+5 to 3 ( 1.00)  5->3  1.00  
+5 to 4 (-4.00)  5->4 -4.00  
+5 to 5 ( 0.00)
+
+Auxiliary Graph
+
+To create the auxiliary graph G* = (E*, V*) from graph G =(E, V), where
+E = set of all edges in G and V is the set of all vertices in G:
+
+    Set V* = V ∪ {s}, where s is a new vertex not in V.  Note: V* is the vertex set of G*.
+    Set E* = E ∪ {s->v | v ε V}, where E* is the edge set of G* and s is the vertex described above.
+
+
+ApplyBellman
+
+ApplyBellman takes the auxiliary graph G* and finds the shortest path from vertex s to all
+the other vertices. These distances are the weights assigned to each of the vertices in the
+original graph G to re-weight the edges of G and are calculated by Bellman-Ford. In
+addition to finding the vertex-weights, ApplyBellman forms a graph identical to G,
+call it G** with newly calculated edge-weights (note these weights are now non-negative).
+
+
+ApplyDijkstra
+
+ApplyDijkstra takes the graph G** and finds the shortest path between a specified vertex
+(in the example above this vertex is 0) and every other vertex using Dijkstra's algorithm.
+The edges of G** are reverse-calibrated to recover the edge-weights in the original graph G.
+Now use these edge-weights to determine the shortest paths  in the original graph G.
+
+ApplyDijkstraAllPairs
+
+ApplyDijkstraAllPairs takes the graph G** and finds the shortest path between every vertex
+and every other vertex using DijkstraAllPairsSP's algorithm. The edges of G** are reverse-calibrated
+ to recover the edge-weights in the original graph G. Now use these edge-weights to determine the
+shortest paths  in the original graph G.
+
+Summary of Analysis
+
+    Dijkstra's single source shortest path algorithm
+    running time: E log V
+    space: V
+    Dijkstra's all pairs shortest path algorithm
+    running time: EV log V
+    space: V
+    Floyd's all pairs shortest path algorithm
+    running time: V3
+    space: V2
+    Bellman Ford single source shortest path algorithm
+    running time: EV
+    space: V
+    Bellman Ford all pairs shortest path algorithm
+    running time: E V2
+    space: V
+
+Submit the running time and space requirement in the worst-case for Novacky's scheme. Make sure you analyze each program in the sequence and reduce it to a function of V and E.

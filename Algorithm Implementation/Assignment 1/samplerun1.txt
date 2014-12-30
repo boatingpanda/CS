@@ -1,0 +1,123 @@
+Script started on Sat Jan 11 16:53:05 2014
+$ java WordSearchGame -board data2.txt -dict dict8.txt
+    
+Welcome to WORD SEARCH!  Run with "-help" for cmd-line options.
+Reading dictionary (16446 words) from disk: 0.240 seconds.
+Putting dictionary into ternary-search-trie: 0.620 seconds.
+Time to find all words in gameboard: 0.002 seconds.
+
+Game Board:
+A Y L H E H H 
+B D S U C E C 
+S T G M C R N 
+U O M U I A I 
+R N B M D L P 
+D A P E X D F 
+A K C E P L L 
+
+You can now type in words.  Type a non-alphabetic symbol and ENTER to quit
+playing and list all the words on the game board.
+flimsy
+Yes, "FLIMSY" is in the dictionary and on the game board.
+hera
+Yes, "HERA" is in the dictionary and on the game board.
+HERALD
+Yes, "HERALD" is in the dictionary and on the game board.
+peck
+Yes, "PECK" is in the dictionary and on the game board.
+luca
+No, "LUCA" is not both in the dictionary and on the game board.
+1
+
+List of all words on the game board:
+    ABSURD        APEX       CRIMP        CUBA      FLIMSY      HECUBA  
+      HERA      HERALD        INCH        PECK       PINCH       ROGUE  
+
+
+List of words that you found:
+    FLIMSY        HERA      HERALD        PECK  
+
+You found 4 out of 12 words, or 33.33 percent.
+Play again? [Y/N] y
+    
+Welcome to WORD SEARCH!  Run with "-help" for cmd-line options.
+Reading dictionary (16446 words) from disk: 0.100 seconds.
+Putting dictionary into ternary-search-trie: 0.095 seconds.
+Time to find all words in gameboard: 0.002 seconds.
+
+Game Board:
+A Y L H E H H 
+B D S U C E C 
+S T G M C R N 
+U O M U I A I 
+R N B M D L P 
+D A P E X D F 
+A K C E P L L 
+
+You can now type in words.  Type a non-alphabetic symbol and ENTER to quit
+playing and list all the words on the game board.
+PINCH
+Yes, "PINCH" is in the dictionary and on the game board.
+INCH
+Yes, "INCH" is in the dictionary and on the game board.
+CRIMP
+Yes, "CRIMP" is in the dictionary and on the game board.
+CUBA
+Yes, "CUBA" is in the dictionary and on the game board.
+HERA
+Yes, "HERA" is in the dictionary and on the game board.
+ROGUE
+Yes, "ROGUE" is in the dictionary and on the game board.
+1
+
+List of all words on the game board:
+    ABSURD        APEX       CRIMP        CUBA      FLIMSY      HECUBA  
+      HERA      HERALD        INCH        PECK       PINCH       ROGUE  
+
+
+List of words that you found:
+     CRIMP        CUBA        HERA        INCH       PINCH       ROGUE  
+
+You found 6 out of 12 words, or 50.00 percent.
+Play again? [Y/N]  Y                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            script
+
+Welcome to WORD SEARCH!  Run with "-help" for cmd-line options.
+Reading dictionary (16446 words) from disk: 0.100 seconds.
+Putting dictionary into ternary-search-trie: 0.095 seconds.
+Time to find all words in gameboard: 0.002 milliseconds.
+
+Game Board:
+A Y L H E H H 
+B D S U C E C 
+S T G M C R N 
+U O M U I A I 
+R N B M D L P 
+D A P E X D F 
+A K C E P L L 
+
+You can now type in words.  Type a non-alphabetic symbol and ENTER to quit
+playing and list all the words on the game board.
+PINCH
+Yes, "PINCH" is in the dictionary and on the game board.
+INCH
+Yes, "INCH" is in the dictionary and on the game board.
+CRIMP
+Yes, "CRIMP" is in the dictionary and on the game board.
+CUBA
+Yes, "CUBA" is in the dictionary and on the game board.
+HERA
+Yes, "HERA" is in the dictionary and on the game board.
+ROGUE
+Yes, "ROGUE" is in the dictionary and on the game board.
+1
+
+List of all words on the game board:
+    ABSURD        APEX       CRIMP        CUBA      FLIMSY      HECUBA  
+      HERA      HERALD        INCH        PECK       PINCH       ROGUE  
+
+
+List of words that you found:
+     CRIMP        CUBA        HERA        INCH       PINCH       ROGUE  
+
+You found 6 out of 12 words, or 50.00 percent.
+Play again? [Y/N] N

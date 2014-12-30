@@ -1,0 +1,1 @@
+To run the program, simply compile and type in java RVG and enter the required information as prompted. Results will be outputted into (and overwrite) results.txt

@@ -1,0 +1,3 @@
+To execute Encode.java, Decode.java, first execute KeyGen.java to obtain the necessary information.
+
+BigIntegerRSA is a standalone program and doesn't require prior execution of other programs, its input format is "-encode file.txt" to encrypt a file, "-decode file.txt.enc" to decrypt the encoded file, or simply give it a number greater than 2 to get the information needed for encryption/decryption.

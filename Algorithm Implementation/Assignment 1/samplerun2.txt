@@ -1,0 +1,42 @@
+Script started on Sat Jan 11 17:15:55 2014
+$ java WordSearchGame -board data1.txt -cols 3
+
+Welcome to WORD SEARCH!  Run with "-help" for cmd-line options.
+Reading dictionary (16446 words) from disk: 0.234 seconds.
+Putting dictionary into ternary-search-trie: 0.045 seconds.
+Time to find all words in gameboard: 0.001 seconds.
+
+Game Board:
+R D R M T 
+B O A * Z 
+B R P E E 
+C P E E R 
+L W N S O 
+
+You can now type in words.  Type a non-alphabetic symbol and ENTER to quit
+playing and list all the words on the game board.
+ape
+No, "APE" is not both in the dictionary and on the game board.
+read
+Yes, "READ" is in the dictionary and on the game board.
+boar
+Yes, "BOAR" is in the dictionary and on the game board.
+boat
+Yes, "BOAT" is in the dictionary and on the game board.
+1
+    
+List of all words on the game board:
+      BOAR        BOAT        CRAM  
+      MARC        PEER        PROD  
+      RAPE        READ        ROPE  
+      SEED        SEEK        SEEM  
+      SEEN        SEEP        ZERO  
+
+
+List of words that you found:
+      BOAR        BOAT        READ  
+
+
+You found 3 out of 15 words, or 20.00 percent.
+Play again? [Y/N] n
+
